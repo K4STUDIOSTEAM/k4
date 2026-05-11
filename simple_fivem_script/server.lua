@@ -4,6 +4,13 @@ local escortedBy = {}
 local jailedUntil = {}
 
 local function notify(src, message)
+    TriggerClientEvent('ox_lib:notify', src, {
+        title = 'Police System',
+        description = message,
+        type = 'inform'
+    })
+
+    -- Fallback for clients without ox_lib loaded for any reason.
     TriggerClientEvent('k4_police:notify', src, message)
 end
 

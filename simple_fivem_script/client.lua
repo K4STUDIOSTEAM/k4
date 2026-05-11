@@ -3,6 +3,15 @@ local isEscorted = false
 local escortOfficerServerId = nil
 
 local function notify(message)
+    if lib and lib.notify then
+        lib.notify({
+            title = 'Police System',
+            description = message,
+            type = 'inform'
+        })
+        return
+    end
+
     TriggerEvent('chat:addMessage', {
         color = { 0, 180, 255 },
         args = { '[Police System]', message }

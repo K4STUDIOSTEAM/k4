@@ -29,13 +29,15 @@ A standalone police system resource for FiveM.
 ## Install
 
 1. Place `simple_fivem_script` in your server `resources` directory.
-2. Add this line to `server.cfg`:
+2. Install ox_lib in your resources if you do not already have it.
+3. Add these lines to `server.cfg` (ox_lib must start first):
 
 ```cfg
+ensure ox_lib
 ensure simple_fivem_script
 ```
 
-3. Start/restart your server.
+4. Start/restart your server.
 
 ## Permissions setup
 
@@ -63,6 +65,7 @@ Edit `config.lua` to customize:
 
 - This is standalone and does not withdraw money by default.
 - Add economy/framework hooks in `server.lua` where marked.
+- Notifications are sent via ox_lib.
 
 ## GitHub quick start
 
